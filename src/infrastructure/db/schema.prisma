@@ -42,7 +42,7 @@ model Category {
   id        String   @id @default(uuid())
   project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
   projectId String
-  type      String   @default("TODO") // TODO: apply check constraint to emulate enum
+  type      String   @default("TODO")
   name      String
   order     Int
   issues    Issue[]

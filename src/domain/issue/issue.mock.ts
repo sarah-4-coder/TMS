@@ -28,6 +28,22 @@ export const todoIssuesMock1: Issue[] = [
   },
 ];
 
+export const readyIssuesMock1: Issue[] = [
+  {
+    id: "b0b4a7d7-2b7b-4c8c-8c6f-4b3b5c4b7c6b",
+    name: "HINT: Try to create a new issue and drag it to another category.",
+    description:
+      "You can create a new issue by clicking on the 'Create new issue' button at the bottom of the page. Once created, you can drag it to another category. This will trigger a PUT request to the server and the issue will be moved to the new category.",
+    reporter: userMock1,
+    asignee: userMock1,
+    comments: [],
+    priority: priorityLow,
+    categoryType: "READY",
+    createdAt,
+    updatedAt: new Date("2022-01-23 16:30").valueOf(),
+  },
+];
+
 export const inProgressIssuesMock1: Issue[] = [
   {
     id: "ea07f7ca-13e9-4143-b623-f5713adef81a",
@@ -133,13 +149,31 @@ export const inProgressIssuesMock2: Issue[] = [
 
 export const doneIssuesMock2: Issue[] = [];
 
+export const readyIssuesMock2: Issue[] = [
+  {
+    id: "b0b4a7d7-2b7b-4c8c-8c6f-4b3b5c4b7c6b",
+    name: "HINT: Try to create a new issue and drag it to another category.",
+    description:
+      "You can create a new issue by clicking on the 'Create new issue' button at the bottom of the page. Once created, you can drag it to another category. This will trigger a PUT request to the server and the issue will be moved to the new category.",
+    reporter: userMock1,
+    asignee: userMock1,
+    comments: [],
+    priority: priorityLow,
+    categoryType: "READY",
+    createdAt,
+    updatedAt: new Date("2022-01-23 16:30").valueOf(),
+  },
+];
+
 export const defaultIssuesIds = [
   todoIssuesMock1,
   inProgressIssuesMock1,
   doneIssuesMock1,
+  readyIssuesMock1,
   todoIssuesMock2,
   inProgressIssuesMock2,
   doneIssuesMock2,
+  readyIssuesMock2,
 ]
   .flat()
   .map((issue) => issue.id);

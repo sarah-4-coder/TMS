@@ -14,7 +14,6 @@ import { Priority, prioritiesMock } from "@domain/priority";
 
 const db = new PrismaClient();
 
-// Leaving the update empty will not update the record if it already exists
 const createUserIfNotExists = async (user: User): Promise<UserDB> => {
   return db.user.upsert({
     where: { id: user.id },
@@ -155,8 +154,6 @@ type GenericRecord = {
   updatedAt: Date;
 };
 const recordAlreadyExists = (record: GenericRecord): boolean => {
-  // If the time difference between createdAt and updatedAt is less than 100ms,
-  // then we consider the record was just created. Otherwise, it was updated.
   const TIME_DIFFERENCE_THRESHOLD_MILISECONDS = 1000;
   const timeDifference = Date.now() - record.createdAt.getTime();
   return timeDifference > TIME_DIFFERENCE_THRESHOLD_MILISECONDS;
