@@ -79,16 +79,16 @@ export const LoginView = ({ users }: Props) => {
   };
 
   return (
-    <div className="mx-auto max-w-[400px] pt-[10vh]">
-      <h1 className="font-primary-black text-5xl text-font">
+    <div className="mx-auto max-w-[400px] flex-center h-full">
+      {/* <h1 className="font-primary-black text-5xl text-font">
         Select login user
-      </h1>
+      </h1> */}
 
       <Form method="post" className="mx-auto w-[300px]">
         <div className="mb-4">
           <label
             htmlFor="username"
-            className="text-gray-700 block text-sm font-medium"
+            className="font-primary-black text-2xl text-font"
           >
             Username
           </label>
@@ -106,7 +106,7 @@ export const LoginView = ({ users }: Props) => {
         <div className="mb-4">
           <label
             htmlFor="password"
-            className="text-gray-700 block text-sm font-medium"
+            className="font-primary-black text-2xl text-font"
           >
             Password
           </label>

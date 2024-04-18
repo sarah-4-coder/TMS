@@ -6,17 +6,16 @@ import cx from "classix";
 import { BsCheckLg } from "react-icons/bs";
 import { User } from "@domain/user";
 import { Project } from "@domain/project";
-import { ActionData as ProjectActionData } from "@app/routes/__main/projects/new";
+import { ActionData as ProjectActionData } from "@app/routes/__main/projects/add-institute";
 import { useUserStore } from "@app/store/user.store";
 import { UserAvatar } from "@app/components/user-avatar";
 import { Button } from "@app/components/button";
 import { Title } from "@app/components/title";
 import { Description } from "@app/components/description";
 import { Kbd } from "@app/components/kbd-placeholder";
-import { CreateProjectPanelHeader } from "./create-project-panel-header";
-import DateCalculator from "./DateCalculator";
+import { AddInstitutePanelHeader } from "./add-institute";
 
-export const CreateProjectPanelView = ({
+export const AddInstitutePanelView = ({
   project,
   users,
 }: Props): JSX.Element => {
@@ -101,8 +100,8 @@ export const CreateProjectPanelView = ({
                 !isOpen && "translate-y-[10px] opacity-0"
               )}
             >
-              <CreateProjectPanelHeader
-                id={project?.id || "Create new project"}
+              <AddInstitutePanelHeader
+                id={project?.id || "Add New Institute"}
               />
               <Form method="post" ref={formRef}>
                 <div className="mb-6">
@@ -111,58 +110,21 @@ export const CreateProjectPanelView = ({
                       initTitle={project?.name || ""}
                       maxLength={30}
                       error={actionData?.errors?.name}
+                      placeholder="Write Name of Institute"
                     />
                   </Dialog.Title>
                   <p className="font-primary-black">Description</p>
                   <div className="-ml-3 mb-5">
                     <Description initDescription={project?.description || ""} />
                   </div>
-                  {/* <p className="font-primary-black text-font">
-                    Project DeadLine
-                  </p>
-                  <div className="mb-6 grid grid-cols-2 gap-1">
-                    <span>Starting Date:</span>
-                    <span><input className="border rounded-sm" type="date" defaultValue={Date(new Date())}/></span>
-                    <span>Deadline:</span>
-                    <span><input className="border rounded-sm" type="date" /></span>
-                    <span>Days Left: </span>
-                    <span><input className="border rounded-sm"/></span>
+                  {/* <Button className="mb-4">Generate Credentials</Button> */}
+                  {/* <p className="font-primary-black">Credentials</p>
+                  <div className="mb-8 grid grid-cols-2">
+                    <span>Username</span>
+                    <span>fajkdafjlafd</span>
+                    <span>Password</span>
+                    <span>fajaff;ad;da;</span>
                   </div> */}
-
-                  <DateCalculator />
-                  <p className="font-primary-black text-font">Assign to Institute</p>
-                  <ul className="space-y-1.5">
-                    {users.map((user) => (
-                      <li
-                        key={user.id}
-                        className="-mx-2 rounded-lg px-2 outline outline-2 outline-transparent duration-75 ease-linear hover:bg-background-brand-subtlest hover:outline-border-brand"
-                      >
-                        <label
-                          htmlFor={`checkbox-${user.id}`}
-                          className="flex w-full cursor-pointer items-center justify-between gap-4 py-3"
-                        >
-                          <span className="flex items-center gap-4">
-                            <UserAvatar {...user} size={48} />
-                            <span>{user.name}</span>
-                          </span>
-                          <Checkbox.Root
-                            id={`checkbox-${user.id}`}
-                            className="h-[36px] w-[36px] rounded-md bg-background-input"
-                            name="user"
-                            value={user.id}
-                            defaultChecked={user.id === loggedUser?.id}
-                          >
-                            <Checkbox.Indicator className="flex h-[36px] w-[36px] rounded-md bg-background-brand-bold duration-150 ease-in flex-center">
-                              <BsCheckLg
-                                size={16}
-                                className="text-font-inverse"
-                              />
-                            </Checkbox.Indicator>
-                          </Checkbox.Root>
-                        </label>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
                 <div className="mt-6 grid grid-cols-3 items-end justify-center">
                   <span className="font-primary-light text-2xs text-font-subtlest text-opacity-80">
@@ -184,7 +146,7 @@ export const CreateProjectPanelView = ({
                           <Spinner />
                         </>
                       ) : (
-                        "Accept"
+                        "Add"
                       )}
                     </Button>
                   </div>

@@ -126,7 +126,7 @@ const App = (): JSX.Element => {
       </head>
       <body className="h-full bg-elevation-surface font-primary text-font">
         <Outlet />
-        <div className="fixed bottom-2 right-2 z-50 flex items-center gap-2">
+        {/* <div className="fixed bottom-2 right-2 z-50 flex items-center gap-2">
           <h6>Managed By</h6>
           <img
             src="/images/dtu-logo.png"
@@ -135,7 +135,7 @@ const App = (): JSX.Element => {
             alt="creator"
             className="border-0"
           />
-        </div>
+        </div> */}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
