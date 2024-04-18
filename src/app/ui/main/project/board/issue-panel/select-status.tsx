@@ -40,6 +40,8 @@ export const SelectStatus = ({ initStatus }: Props): JSX.Element => {
           selectedStatus === "IN_PROGRESS" &&
             "hover:bg-background-accent-blue-bolder-hovered !bg-background-accent-blue-bolder",
           selectedStatus === "DONE" &&
+            "hover:bg-background-accent-green-bolder-hovered !bg-background-accent-green-bolder",
+          selectedStatus === "READY" &&
             "hover:bg-background-accent-green-bolder-hovered !bg-background-accent-green-bolder"
         )}
       >
@@ -60,6 +62,8 @@ export const SelectStatus = ({ initStatus }: Props): JSX.Element => {
                   category.type === "IN_PROGRESS" &&
                     "bg-background-accent-blue-subtler text-font-accent-blue",
                   category.type === "DONE" &&
+                    "bg-background-accent-green-subtler text-font-accent-green",
+                  category.type === "READY" &&
                     "bg-background-accent-green-subtler text-font-accent-green"
                 )}
               >

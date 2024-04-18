@@ -120,7 +120,6 @@ export const CategoryColumn = (props: CategoryColumnProps): JSX.Element => {
           <AiOutlinePlus size={24} />
         </Link>
       </div>
-      {/* Column body items */}
       <div ref={columnRef} className="h-full">
         <div style={{ height: `${columnHeight}px` }}>
           <ScrollArea>
