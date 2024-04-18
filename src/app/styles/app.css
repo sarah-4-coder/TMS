@@ -19,6 +19,10 @@
     --toastify-text-color-success: var(--color-font) !important;
   }
 
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  
   :root {
     --Neutral0: #ffffff;
     --Neutral100: #f7f8f9;

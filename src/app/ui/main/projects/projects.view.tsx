@@ -6,12 +6,20 @@ import { Button } from "@app/components/button";
 import { ProjectCard } from "./project-card";
 
 export const ProjectsView = ({
-  projectsSummary
+  projectsSummary,
 }: ProjectsViewProps): JSX.Element => {
   return (
     <div className="p-6">
       <h1 className="font-primary-black text-2xl">PROJECTS</h1>
       <div className="mt-8 flex gap-2">
+        <Link to="/projects/add-institute" className="flex w-fit">
+          <Button color="neutral" variant="subtlest" className="py-3 pl-3 pr-4">
+            <span>
+              <AiOutlinePlus size={22} />
+            </span>
+            <span className="leading-4">Add Institutes</span>
+          </Button>
+        </Link>
         <Link to="new" className="flex w-fit">
           <Button color="neutral" variant="subtlest" className="py-3 pl-3 pr-4">
             <span>
@@ -20,7 +28,7 @@ export const ProjectsView = ({
             <span className="leading-4">Add Project</span>
           </Button>
         </Link>
-        <Link to="new" className="flex w-fit">
+        <Link to="/analytics" className="flex w-fit">
           <Button color="neutral" variant="subtlest" className="py-3 pl-3 pr-4">
             <span>
               <SiSimpleanalytics size={22} />
@@ -37,9 +45,9 @@ export const ProjectsView = ({
               <option>Date Completed</option>
               <option>Progress</option>
               <option>Assigne Name</option>
-=            </select>
+            </select>
           </div>
-          <div className="space-x-2">
+          {/* <div className="space-x-2">
             <span>Filter by Progress Status:</span>
             <select className="h-full rounded-md border">
               <option>All</option>
@@ -48,17 +56,19 @@ export const ProjectsView = ({
               <option>Completed</option>
               <option>Not Assigned</option>
 =            </select>
-          </div>
+          </div> */}
           <div className="space-x-2">
             <span>Filter by Institute:</span>
-            <select className="h-full rounded-md border">
+            <select className="rounded-md border h-8">
               <option>All</option>
               <option>Delhi Technological University</option>
               <option>Netaji Subhash University</option>
               <option>Indian Institute of Technology Bombay</option>
               <option>Indian Institute of Technology Jammu</option>
               <option>Indian Institute of Technology Hyderabad</option>
-              <option>Indira Gandhi Delhi Technical University for Women Delhi</option>
+              <option>
+                Indira Gandhi Delhi Technical University for Women Delhi
+              </option>
             </select>
           </div>
         </div>
