@@ -84,7 +84,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
 export default function AnalyticsRoute() {
   return (
     <>
-      <AnalyticsSection />;
+      <AnalyticsSection />
       {/* <canvas id="taskChart" width="400" height="400"></canvas> */}
     </>
   );

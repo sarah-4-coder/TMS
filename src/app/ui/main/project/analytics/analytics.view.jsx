@@ -1,49 +1,35 @@
-import React from "react";
-
-import {
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
 const tasks = [
-  { id: 1, category: 'to-do' },
-  { id: 2, category: 'completed' },
-  { id: 3, category: 'to-do' },
-  { id: 4, category: 'in-progress' },
-  { id: 5, category: 'to-do' },
-  { id: 6, category: 'delayed' },
-  { id: 7, category: 'in-progress' },
-  { id: 8, category: 'completed' },
-  { id: 9, category: 'completed' },
-  { id: 10, category: 'in-progress' },
+  { id: 1, category: "To Do" },
+  { id: 2, category: "Completed" },
+  { id: 3, category: "To Do" },
+  { id: 4, category: "In Progress" },
+  { id: 5, category: "To Do" },
+  { id: 6, category: "Delayed" },
+  { id: 7, category: "In Progress" },
+  { id: 8, category: "Completed" },
+  { id: 9, category: "Completed" },
+  { id: 10, category: "In Progress" },
   // Adding more data for each category
-  { id: 11, category: 'to-do' },
-  { id: 12, category: 'completed' },
-  { id: 13, category: 'completed' },
-  { id: 14, category: 'in-progress' },
-  { id: 15, category: 'delayed' },
-  { id: 16, category: 'to-do' },
-  { id: 17, category: 'to-do' },
-  { id: 18, category: 'in-progress' },
-  { id: 19, category: 'completed' },
-  { id: 20, category: 'completed' },
+  { id: 11, category: "To Do" },
+  { id: 12, category: "Completed" },
+  { id: 13, category: "Completed" },
+  { id: 14, category: "In Progress" },
+  { id: 15, category: "Delayed" },
+  { id: 16, category: "To Do" },
+  { id: 17, category: "To Do" },
+  { id: 18, category: "In Progress" },
+  { id: 19, category: "Completed" },
+  { id: 20, category: "Completed" },
 ];
 
 const AnalyticsSection = () => {
   const taskCategories = {
-    "to-do": 0,
-    completed: 0,
-    "in-progress": 0,
-    delayed: 0,
+    "To Do": 0,
+    Completed: 0,
+    "In Progress": 0,
+    Delayed: 0,
   };
 
   tasks.forEach((task) => {
@@ -58,58 +44,10 @@ const AnalyticsSection = () => {
   }));
 
   return (
-    <>
-      <div className="flex flex-wrap">
-        <div className="w-full p-4 sm:w-[80%]">
-          <div className="flex ">
-            <div className="w-[50%]">
-              <BarChart
-                width={500}
-                height={250}
-                data={data}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="category" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="count" fill="#8884d8" />
-              </BarChart>
-            </div>
-
-          
-            <div className="w-full md:w-1/2 lg:w-1/3">
-             
-              <LineChart
-                width={400}
-                height={250}
-                data={data}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="category" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="count" stroke="#8884d8" />
-              </LineChart>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <AreaChart
+    <div className="flex flex-col gap-4">
+      <div className="w-full rounded p-4 shadow-sm">
+        <h3 className="mb-8 text-2xl">Task Status</h3>
+        <BarChart
           width={1000}
           height={250}
           data={data}
@@ -125,10 +63,10 @@ const AnalyticsSection = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Area type="monotone" dataKey="count" fill="#8884d8" />
-        </AreaChart>
+          <Bar dataKey="count" fill="#8884d8" />
+        </BarChart>
       </div>
-    </>
+    </div>
   );
 };
 
